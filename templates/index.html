@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+    <div class="container">
+        <div>
+            <!-- https://openclipart.org/detail/219648/newspaper-stand by user -->
+            <img class="footer" src="/static/newsstand.png" alt="News Stand" style="width:200px">
+        </div>
+        <p>
+            Select the section(s) of the world you'd like to receive random news from:
+        </p>
+        <p>
+            <div class="row">
+                <label class="checkbox-inline"><input type="checkbox" id="0" value="" onclick="toggle_select(0)">Africa</label>
+                <label class="checkbox-inline"><input type="checkbox" id="1" value="" onclick="toggle_select(1)">Americas</label>
+                <label class="checkbox-inline"><input type="checkbox" id="2" value="" onclick="toggle_select(2)">Asia Pacific</label>
+                <label class="checkbox-inline"><input type="checkbox" id="3" value="" onclick="toggle_select(3)">Europe</label>
+                <label class="checkbox-inline"><input type="checkbox" id="4" value="" onclick="toggle_select(4)">Middle East</label>
+                <label class="checkbox-inline"><input type="checkbox" id="5" value="" onclick="toggle_select(5)">Travel</label>
+            </div>
+        </p>
+        <p>
+            <button class="btn btn-default" type="submit" id='submitBtn' name='submitBtn'>Get a Random Article</button>
+        </p>
+        <div id="getArticleResult"></div>
+    </div>
+    <div id="checkbox-data" data-africa="{{ data.africa }}" data-americas="{{ data.americas }}" data-asiapacific="{{ data.asiaPacific }}" data-europe="{{ data.europe }}" data-middleeast="{{ data.middleEast }}" data-travel="{{ data.travel }}"></div>
+{% endblock %}
